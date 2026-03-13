@@ -3,178 +3,665 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Portfolio Adriana</title>
+    <title>Adrian Nowowiejski – Portfolio</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">  
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
     <style>
-      .fixed-size-img {
-        height: 200px;
+      :root {
+        --bg: #0b1120;
+        --bg-soft: #020617;
+        --card-bg: #020617;
+        --card-border: #1f2937;
+        --accent: #38bdf8;
+        --accent-soft: rgba(56, 189, 248, 0.08);
+        --text-main: #e5e7eb;
+        --text-muted: #9ca3af;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        min-height: 100vh;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", sans-serif;
+        background: radial-gradient(circle at top left, #111827 0, #020617 55%, #020617 100%);
+        color: var(--text-main);
+      }
+
+      .page-shell {
+        padding: 2.5rem 1.5rem 3rem;
+      }
+
+      @media (min-width: 768px) {
+        .page-shell {
+          padding: 3.5rem 2rem 4rem;
+        }
+      }
+
+      .page-inner {
+        max-width: 1120px;
+        margin: 0 auto;
+      }
+
+      .page-card {
+        border-radius: 1.75rem;
+        background: linear-gradient(135deg, rgba(15, 23, 42, 0.96), rgba(15, 23, 42, 0.98));
+        border: 1px solid rgba(148, 163, 184, 0.14);
+        box-shadow:
+          0 18px 45px rgba(15, 23, 42, 0.9),
+          0 0 0 1px rgba(15, 23, 42, 0.9);
+        padding: 2.25rem 1.75rem 2.5rem;
+      }
+
+      @media (min-width: 768px) {
+        .page-card {
+          padding: 2.75rem 2.5rem 3rem;
+        }
+      }
+
+      .badge-pill {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.45rem;
+        padding: 0.35rem 0.85rem;
+        border-radius: 999px;
+        background: rgba(15, 23, 42, 0.9);
+        border: 1px solid rgba(148, 163, 184, 0.35);
+        color: var(--text-muted);
+        font-size: 0.76rem;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+      }
+
+      .badge-dot {
+        width: 8px;
+        height: 8px;
+        border-radius: 999px;
+        background: radial-gradient(circle at 30% 30%, #f9fafb, #22c55e 55%, #16a34a 100%);
+        box-shadow: 0 0 0 1px rgba(34, 197, 94, 0.4);
+      }
+
+      .hero-layout {
+        display: grid;
+        gap: 2rem;
+      }
+
+      @media (min-width: 992px) {
+        .hero-layout {
+          grid-template-columns: minmax(0, 1.4fr) minmax(0, 1.15fr);
+          align-items: center;
+        }
+      }
+
+      .hero-title {
+        font-size: clamp(2.2rem, 3vw + 1.4rem, 3.1rem);
+        letter-spacing: -0.045em;
+        line-height: 1.05;
+        margin-bottom: 1rem;
+      }
+
+      .hero-highlight {
+        background: linear-gradient(90deg, #38bdf8, #a855f7);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+      }
+
+      .hero-subtitle {
+        color: var(--text-muted);
+        font-size: 0.98rem;
+        max-width: 34rem;
+      }
+
+      .hero-meta {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1.2rem;
+        margin-top: 1.75rem;
+        font-size: 0.9rem;
+        color: var(--text-muted);
+      }
+
+      .hero-meta-label {
+        color: #e5e7eb;
+        font-weight: 500;
+        margin-right: 0.25rem;
+      }
+
+      .pill {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.35rem;
+        padding: 0.2rem 0.7rem;
+        border-radius: 999px;
+        background: rgba(15, 23, 42, 0.9);
+        border: 1px solid rgba(148, 163, 184, 0.35);
+        font-size: 0.78rem;
+        color: var(--text-muted);
+      }
+
+      .pill-dot {
+        width: 6px;
+        height: 6px;
+        border-radius: 999px;
+        background: #38bdf8;
+      }
+
+      .hero-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.85rem;
+        margin-top: 2rem;
+      }
+
+      .btn-primary-soft,
+      .btn-ghost {
+        border-radius: 999px;
+        padding: 0.65rem 1.5rem;
+        font-size: 0.9rem;
+        font-weight: 500;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.45rem;
+        border-width: 1px;
+        border-style: solid;
+        transition: all 0.18s ease-out;
+      }
+
+      .btn-primary-soft {
+        background: radial-gradient(circle at 0 0, rgba(56, 189, 248, 0.16), rgba(8, 47, 73, 0.9));
+        border-color: rgba(56, 189, 248, 0.7);
+        color: #e5e7eb;
+        box-shadow:
+          0 12px 28px rgba(15, 23, 42, 0.95),
+          0 0 0 1px rgba(15, 23, 42, 0.9);
+      }
+
+      .btn-primary-soft:hover {
+        transform: translateY(-1px) translateZ(0);
+        background: radial-gradient(circle at 0 0, rgba(56, 189, 248, 0.24), rgba(8, 47, 73, 0.95));
+        border-color: rgba(56, 189, 248, 0.9);
+        box-shadow:
+          0 16px 34px rgba(15, 23, 42, 0.98),
+          0 0 0 1px rgba(15, 23, 42, 0.95);
+      }
+
+      .btn-ghost {
+        background: rgba(15, 23, 42, 0.4);
+        border-color: rgba(148, 163, 184, 0.5);
+        color: var(--text-muted);
+      }
+
+      .btn-ghost:hover {
+        background: rgba(15, 23, 42, 0.9);
+        color: var(--text-main);
+        border-color: rgba(148, 163, 184, 0.85);
+      }
+
+      .hero-aside {
+        position: relative;
+      }
+
+      .hero-panel {
+        border-radius: 1.5rem;
+        padding: 1.5rem;
+        background: radial-gradient(circle at 10% 0, rgba(56, 189, 248, 0.12), rgba(15, 23, 42, 0.96));
+        border: 1px solid rgba(148, 163, 184, 0.4);
+        box-shadow:
+          0 16px 40px rgba(15, 23, 42, 0.98),
+          0 0 0 1px rgba(15, 23, 42, 0.9);
+        overflow: hidden;
+      }
+
+      .hero-panel-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 1.25rem;
+        font-size: 0.83rem;
+        color: var(--text-muted);
+      }
+
+      .hero-panel-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 0.75rem;
+      }
+
+      .stat-card {
+        border-radius: 0.9rem;
+        padding: 0.75rem 0.85rem;
+        background: rgba(15, 23, 42, 0.9);
+        border: 1px solid rgba(31, 41, 55, 0.95);
+      }
+
+      .stat-label {
+        font-size: 0.78rem;
+        color: var(--text-muted);
+        margin-bottom: 0.25rem;
+      }
+
+      .stat-value {
+        font-size: 0.92rem;
+        font-weight: 600;
+        color: #e5e7eb;
+      }
+
+      .stat-tag {
+        margin-top: 0.2rem;
+        font-size: 0.75rem;
+        color: #9ca3af;
+      }
+
+      .projects-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
+        margin-top: 2.5rem;
+        margin-bottom: 1.25rem;
+      }
+
+      .projects-header-title {
+        font-size: 0.96rem;
+        text-transform: uppercase;
+        letter-spacing: 0.18em;
+        color: var(--text-muted);
+      }
+
+      .projects-header-subtitle {
+        font-size: 0.88rem;
+        color: var(--text-muted);
+      }
+
+      .projects-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+        gap: 1.4rem;
+      }
+
+      .project-card {
+        position: relative;
+        border-radius: 1.2rem;
+        overflow: hidden;
+        background: var(--card-bg);
+        border: 1px solid var(--card-border);
+        box-shadow:
+          0 8px 26px rgba(15, 23, 42, 0.85),
+          0 0 0 1px rgba(15, 23, 42, 0.95);
+        display: flex;
+        flex-direction: column;
+        transition: transform 0.16s ease-out, box-shadow 0.16s ease-out, border-color 0.16s ease-out, background 0.16s ease-out;
+      }
+
+      .project-card:hover {
+        transform: translateY(-4px) scale(1.02) translateZ(0);
+        border-color: rgba(56, 189, 248, 0.7);
+        box-shadow:
+          0 16px 40px rgba(15, 23, 42, 0.95),
+          0 0 0 1px rgba(15, 23, 42, 0.9);
+        background: radial-gradient(circle at 0 0, rgba(56, 189, 248, 0.08), #020617);
+      }
+
+      .project-thumb-wrap {
+        position: relative;
+        overflow: hidden;
+        background: #020617;
+      }
+
+      .project-thumb {
+        width: 100%;
+        height: 180px;
         object-fit: cover;
+        transition: opacity 0.22s ease-out;
+      }
+
+      .project-tag {
+        position: absolute;
+        inset: auto 0 0;
+        padding: 0.55rem 0.9rem 0.6rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 0.5rem;
+        font-size: 0.76rem;
+        color: #e5e7eb;
+        background: linear-gradient(to top, rgba(15, 23, 42, 0.96), transparent);
+      }
+
+      .project-tag-pill {
+        padding: 0.15rem 0.55rem;
+        border-radius: 999px;
+        border: 1px solid rgba(148, 163, 184, 0.7);
+        font-size: 0.7rem;
+        color: var(--text-muted);
+      }
+
+      .project-body {
+        padding: 1rem 1rem 0.9rem;
+        display: flex;
+        flex-direction: column;
+        gap: 0.35rem;
+      }
+
+      .project-title {
+        font-size: 1rem;
+        font-weight: 600;
+        color: #e5e7eb;
+      }
+
+      .project-meta {
+        font-size: 0.8rem;
+        text-transform: uppercase;
+        letter-spacing: 0.18em;
+        color: var(--text-muted);
+      }
+
+      .project-description {
+        font-size: 0.88rem;
+        color: var(--text-muted);
+      }
+
+      .project-footer {
+        padding: 0.6rem 1rem 0.9rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 0.75rem;
+      }
+
+      .project-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.4rem;
+        font-size: 0.82rem;
+        color: var(--accent);
+        text-decoration: none;
+      }
+
+      .project-link span {
+        text-decoration: underline transparent;
+        text-underline-offset: 0.09em;
+        transition: text-decoration-color 0.16s ease-out;
+      }
+
+      .project-card:hover .project-link span {
+        text-decoration-color: rgba(56, 189, 248, 0.8);
+      }
+
+      .tech-badges {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.3rem;
+        justify-content: flex-end;
+      }
+
+      .tech-badge {
+        padding: 0.1rem 0.55rem;
+        border-radius: 999px;
+        border: 1px solid rgba(55, 65, 81, 0.95);
+        font-size: 0.72rem;
+        color: var(--text-muted);
+      }
+
+      footer {
+        color: var(--text-muted);
+      }
+
+      footer .bi {
+        color: var(--text-muted);
+        transition: color 0.15s ease-out, transform 0.15s ease-out;
+      }
+
+      footer a:hover .bi {
+        color: var(--accent);
+        transform: translateY(-1px);
+      }
+
+      .fade-in {
+        opacity: 0;
+        transform: translateY(6px);
+        animation: fadeInUp 0.4s ease-out forwards;
+      }
+
+      .fade-in-delay {
+        animation-delay: 0.14s;
+      }
+
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(6px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
       }
     </style>
   </head>
   <body>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-    
-    <div class="container mt-5">
-        <div class="text-start">
-          <h1 class="text-uppercase fw-bold mb-4 fs-5 d-flex justify-content-center">Portfolio</h1>
-          <h1 class="text-uppercase fw-bold mb-5 fs-1 d-flex justify-content-center">Adrian Nowowiejski</h1>
-          <p class="lead mb-4 text-center">Welcome to my Portfolio! You can find here all my interesting projects that can show you my skills & abilities!</p>
-          <hr class="mt=5 mb-5">
-        </div>
-    </div>
 
-    <div class="container">
-    <div class="container text-center">
-        <div class="row justify-content-center g-4">
-          <div class="col-xxl-3 col-lg-4 col-md-6 col-sm-12">
-            
-            <div class="card mb-4 w-100">
-              <img src="./images/zombies.png" class="card-img-top fixed-size-img" alt="...">
-              <div class="card-body">
-                <h5 class="card-title">Zombies</h5>
-                <p class="card-text">Multiplayer 3d steamwork project in Unity Engine!</p>
-                <a href="./subsites/project9.html" class="btn btn-primary">View details</a>
+    <div class="page-shell">
+      <div class="page-inner">
+        <div class="page-card fade-in">
+          <div class="hero-layout">
+            <div>
+              <div class="badge-pill mb-3">
+                <span class="badge-dot"></span>
+                <span>Game / Graphics / Web</span>
               </div>
+              <h1 class="hero-title">
+                Adrian Nowowiejski
+                <span class="hero-highlight">— Portfolio</span>
+              </h1>
+              <p class="hero-subtitle">
+                I design and build interactive experiences: from Unity games and custom DirectX engines to web experiments and tools.
+                Below is a curated selection of work that best reflects my skills and interests.
+              </p>
+              <div class="hero-meta">
+                <div>
+                  <span class="hero-meta-label">Focus</span>
+                  Gameplay programming, graphics, UI, tools
+                </div>
+                <div>
+                  <span class="hero-meta-label">Stack</span>
+                  Unity · C++ · C# · Java · Web
+                </div>
+              </div>
+              <div class="hero-actions">
+                <a href="mailto:anowowiejski123@gmail.com" class="btn-primary-soft text-decoration-none">
+                  <span>Get in touch</span>
+                  <i class="bi bi-arrow-up-right"></i>
+                </a>
+                <a href="https://github.com/Gradi02" class="btn-ghost text-decoration-none">
+                  <i class="bi bi-github"></i>
+                  <span>GitHub</span>
+                </a>
+              </div>
+            </div>
+            <aside class="hero-aside">
+              <div class="hero-panel fade-in fade-in-delay">
+                <div class="hero-panel-header">
+                  <span>Snapshot</span>
+                  <span class="pill">
+                    <span class="pill-dot"></span>
+                    <span>Always learning</span>
+                  </span>
+                </div>
+                <div class="hero-panel-grid">
+                  <div class="stat-card">
+                    <div class="stat-label">Shipped projects</div>
+                    <div class="stat-value" id="stat-project-count">9+</div>
+                    <div class="stat-tag">Games · tools · prototypes</div>
+                  </div>
+                  <div class="stat-card">
+                    <div class="stat-label">Game jams & events</div>
+                    <div class="stat-value">Meet-IT · StartIT</div>
+                    <div class="stat-tag">Collaboration & deadlines</div>
+                  </div>
+                  <div class="stat-card">
+                    <div class="stat-label">Engines & graphics</div>
+                    <div class="stat-value">DirectX · three.js</div>
+                    <div class="stat-tag">Low-level rendering</div>
+                  </div>
+                  <div class="stat-card">
+                    <div class="stat-label">Platforms</div>
+                    <div class="stat-value">PC · Web · Mobile</div>
+                    <div class="stat-tag">Unity · Java · Qt</div>
+                  </div>
+                </div>
+              </div>
+            </aside>
           </div>
 
+          <div class="projects-header">
+            <div>
+              <div class="projects-header-title">Selected projects</div>
+              <div class="projects-header-subtitle">Loaded dynamically from a simple JSON file for easy management.</div>
+            </div>
+          </div>
+
+          <div id="projects-grid" class="projects-grid" aria-live="polite"></div>
         </div>
-        <div class="col-xxl-3 col-lg-4 col-md-6 col-sm-12">
 
-            <div class="card mb-4 w-100">
-                <img src="./images/piraciLogo.png" class="card-img-top fixed-size-img" alt="...">
-                <div class="card-body">
-                  <h5 class="card-title">Smoke'n'Sail</h5>
-                  <p class="card-text">Meet-IT Game-Jam 2024 winner game created in Unity Engine!</p>
-                  <a href="./subsites/project1.html" class="btn btn-primary">View details</a>
-                </div>
+
+
+
+
+
+
+        <div class="mt-4">
+          <footer class="d-flex flex-wrap justify-content-between align-items-center pt-3 mt-2 border-top border-secondary-subtle">
+            <div class="col-md-4 d-flex justify-content-start align-items-center gap-2">
+              <span class="text-body-secondary small">© 2024</span>
+              <span class="text-body-secondary small">Adrian Nowowiejski</span>
             </div>
-
-          </div>
-          <div class="col-xxl-3 col-lg-4 col-md-6 col-sm-12">
-
-            <div class="card mb-4 w-100">
-                <img src="./images/OnGridLogo.png" class="card-img-top fixed-size-img" alt="...">
-                <div class="card-body">
-                  <h5 class="card-title">OnGrid</h5>
-                  <p class="card-text">Figma mobile app prototype created during project in Antwerp!</p>
-                  <a href="./subsites/project2.html" class="btn btn-primary">View details</a>
-                </div>
-            </div>
-
-          </div>
-          <div class="col-xxl-3 col-lg-4 col-md-6 col-sm-12">
-
-            <div class="card mb-4 w-100">
-                <img src="./images/EngineLogo.png" class="card-img-top fixed-size-img" alt="...">
-                <div class="card-body">
-                  <h5 class="card-title">DirectX Engine</h5>
-                  <p class="card-text">Simple graphic engine created with c++ directX!</p>
-                  <a href="./subsites/project3.html" class="btn btn-primary">View details</a>
-                </div>
-            </div>
-
-          </div>
-          <div class="col-xxl-3 col-lg-4 col-md-6 col-sm-12">
-
-            <div class="card mb-4 w-100">
-                <img src="./images/chezleLogo.png" class="card-img-top fixed-size-img" alt="...">
-                <div class="card-body">
-                  <h5 class="card-title">Chezle</h5>
-                  <p class="card-text">Mobile game with ads API created in Unity Engine!</p>
-                  <a href="./subsites/project4.html" class="btn btn-primary">View details</a>
-                </div>
-            </div>
-
-          </div>
-          <div class="col-xxl-3 col-lg-4 col-md-6 col-sm-12">
-
-            <div class="card mb-4 w-100">
-                <img src="./images/paintLogo.png" class="card-img-top fixed-size-img" alt="...">
-                <div class="card-body">
-                  <h5 class="card-title">Java Swing Paint</h5>
-                  <p class="card-text">Paint Clone windows app created in Java Swing!</p>
-                  <a href="./subsites/project5.html" class="btn btn-primary">View details</a>
-                </div>
-            </div>
-
-          </div>
-          <div class="col-xxl-3 col-lg-4 col-md-6 col-sm-12">
-
-            <div class="card mb-4 w-100">
-                <img src="./images/checkersLogo.png" class="card-img-top fixed-size-img" alt="...">
-                <div class="card-body">
-                  <h5 class="card-title">Web Checkers</h5>
-                  <p class="card-text">Simple interactable checkers scene preapared with threeJS!</p>
-                  <a href="./subsites/project6.html" class="btn btn-primary">View details</a>
-                </div>
-            </div>
-
-          </div>
-          <div class="col-xxl-3 col-lg-4 col-md-6 col-sm-12">
-
-            <div class="card mb-4 w-100">
-                <img src="./images/brozardLogo.png" class="card-img-top fixed-size-img" alt="...">
-                <div class="card-body">
-                  <h5 class="card-title">Brozard</h5>
-                  <p class="card-text">2D Top-Down shooter created in Unity Engine with friend!</p>
-                  <a href="./subsites/project7.html" class="btn btn-primary">View details</a>
-                </div>
-            </div>
-
-          </div>
-          <div class="col-xxl-3 col-lg-4 col-md-6 col-sm-12">
-
-            <div class="card mb-4 w-100">
-                <img src="./images/calculator.png" class="card-img-top fixed-size-img" alt="...">
-                <div class="card-body">
-                  <h5 class="card-title">QT Calculator</h5>
-                  <p class="card-text">Calculator created in QT c++ with String Evaluation!</p>
-                  <a href="./subsites/project8.html" class="btn btn-primary">View details</a>
-                </div>
-            </div>
-
-          </div>
+            <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
+              <li class="ms-3">
+                <a class="text-body-secondary" href="https://www.linkedin.com/in/adrian-nowowiejski-1b88ba305/">
+                  <i class="bi bi-linkedin" style="font-size: 20px;"></i>
+                </a>
+              </li>
+              <li class="ms-3">
+                <a class="text-body-secondary" href="https://github.com/Gradi02">
+                  <i class="bi bi-github" style="font-size: 20px;"></i>
+                </a>
+              </li>
+              <li class="ms-3">
+                <a class="text-body-secondary" href="mailto:anowowiejski123@gmail.com">
+                  <i class="bi bi-envelope" style="font-size: 20px;"></i>
+                </a>
+              </li>
+            </ul>
+          </footer>
         </div>
       </div>
     </div>
 
+    <script>
+      const projectsGrid = document.getElementById('projects-grid');
+      const projectCountStat = document.getElementById('stat-project-count');
 
+      function createProjectCard(project) {
+        const card = document.createElement('article');
+        card.className = 'project-card';
 
+        const thumbWrap = document.createElement('div');
+        thumbWrap.className = 'project-thumb-wrap';
 
+        const img = document.createElement('img');
+        img.className = 'project-thumb';
+        img.src = project.cardImage;
+        img.alt = project.title;
+        thumbWrap.appendChild(img);
 
+        const tag = document.createElement('div');
+        tag.className = 'project-tag';
+        const tagLeft = document.createElement('div');
+        tagLeft.textContent = project.tagline || 'Featured project';
+        const tagRight = document.createElement('div');
+        tagRight.className = 'project-tag-pill';
+        tagRight.textContent = project.category || 'Project';
+        tag.appendChild(tagLeft);
+        tag.appendChild(tagRight);
+        thumbWrap.appendChild(tag);
 
-    <!-- stopka --> 
-    <div class="container">
-      <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
-        <div class="col-md-4 d-flex justify-content-start">
-          <a href="/" class="mb-3 mb-md-0 text-body-secondary text-decoration-none lh-1">
-            <svg class="bi" width="30" height="24"><use xlink:href="#bootstrap"></use></svg>
-          </a>
-          <span class="mb-3 mb-md-0 text-body-secondary" style="margin-left: -30px;">© 2024</span>
-        </div>
-    
-        <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
-          <li class="ms-3">
-            <a class="text-body-secondary" href="https://www.linkedin.com/in/adrian-nowowiejski-1b88ba305/">
-              <i class="bi bi-linkedin" style="font-size: 24px;"></i>
-            </a>
-          </li>
-          <li class="ms-3">
-            <a class="text-body-secondary" href="https://github.com/Gradi02">
-              <i class="bi bi-github" style="font-size: 24px;"></i>
-            </a>
-          </li>
-          <li class="ms-3">
-            <a class="text-body-secondary" href="mailto:anowowiejski123@gmail.com">
-              <i class="bi bi-envelope" style="font-size: 24px;"></i>
-            </a>
-          </li>
-        </ul>
-      </footer>
-    </div>
-    
-</body>
+        const body = document.createElement('div');
+        body.className = 'project-body';
+
+        const title = document.createElement('h2');
+        title.className = 'project-title';
+        title.textContent = project.title;
+        body.appendChild(title);
+
+        if (project.meta) {
+          const meta = document.createElement('div');
+          meta.className = 'project-meta';
+          meta.textContent = project.meta;
+          body.appendChild(meta);
+        }
+
+        if (project.description) {
+          const desc = document.createElement('p');
+          desc.className = 'project-description';
+          desc.textContent = project.description;
+          body.appendChild(desc);
+        }
+
+        const footer = document.createElement('div');
+        footer.className = 'project-footer';
+
+        const link = document.createElement('a');
+        link.className = 'project-link';
+        link.href = project.page || '';
+        const span = document.createElement('span');
+        span.textContent = 'View details';
+        const icon = document.createElement('i');
+        icon.className = 'bi bi-arrow-right';
+        link.appendChild(span);
+        link.appendChild(icon);
+
+        footer.appendChild(link);
+
+        if (project.tech && project.tech.length) {
+          const techWrap = document.createElement('div');
+          techWrap.className = 'tech-badges';
+          project.tech.forEach(t => {
+            const badge = document.createElement('span');
+            badge.className = 'tech-badge';
+            badge.textContent = t;
+            techWrap.appendChild(badge);
+          });
+          footer.appendChild(techWrap);
+        }
+
+        card.appendChild(thumbWrap);
+        card.appendChild(body);
+        card.appendChild(footer);
+
+        return card;
+      }
+
+      fetch('projects.json')
+        .then(res => res.json())
+        .then(data => {
+          const projects = (data && data.projects) || [];
+          projectsGrid.innerHTML = '';
+          projects.forEach(p => {
+            projectsGrid.appendChild(createProjectCard(p));
+          });
+
+          if (projects.length && projectCountStat) {
+            projectCountStat.textContent = projects.length + '+';
+          }
+        })
+        .catch(() => {
+          projectsGrid.innerHTML = '<p class="text-body-secondary small mb-0">Unable to load projects.json – please ensure the file exists in the root of the repository.</p>';
+        });
+    </script>
+  </body>
 </html>
