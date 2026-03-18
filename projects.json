@@ -1,33 +1,124 @@
 {
   "projects": [
     {
-      "id": "zombies",
-      "title": "Zombies",
-      "category": "Unity · Multiplayer",
-      "tagline": "Co-op zombie survival with Steam integration.",
-      "meta": "Unity · 3D · Multiplayer",
-      "description": "Multiplayer 3D project using Unity and Steamworks with a focus on moment-to-moment gameplay and online co-op.",
-      "cardImage": "images/zombies.png",
-      "heroImage": "images/zombies.png",
-      "page": "project.html?id=zombies",
+      "id": "wuzzek",
+      "title": "Push The Cart Together",
+      "meta": "Multiplayer · Steam API",
+      "description": "A multiplayer game about pushing a cart, planned for release on Steam in 2026.",
+      "cardImage": "icons_images/wuzzekLogo.png",
+      "heroImage": "icons_images/wuzzekLogo.png",
+      "page": "project.html?id=wuzzek",
       "details": [
-        "Multiplayer 3D game created in Unity Engine.",
-        "Uses Steamworks for online services.",
-        "Focus on cooperative gameplay and session flow."
+        "Multiplayer game about pushing a cart.",
+        "Will be released on Steam in 2026.",
+        "Developed in cooperation with a friend."
       ],
-      "links": [],
-      "gallery": [],
+      "links": [
+        {
+          "label": "GitHub repository",
+          "url": "https://github.com/Tobkubos/Wuzzek"
+        },
+        {
+          "label": "Steam page",
+          "url": "https://store.steampowered.com/app/4360180/Push_The_Cart_Together?beta=1"
+        }
+      ],
+      "gallery": [
+        "subsites/wuzzek/wuzzek1.png",
+        "subsites/wuzzek/wuzzek2.png",
+        "subsites/wuzzek/wuzzek3.png",
+        "subsites/wuzzek/wuzzek4.png"
+      ],
       "tech": ["Unity", "C#", "Steamworks"]
+    },
+    {
+      "id": "voice-chess",
+      "title": "Voice Chess",
+      "meta": "Voice control · Chess",
+      "description": "A chess game that can be played by voice commands.",
+      "cardImage": "icons_images/voiceChessLogo.png",
+      "heroImage": "icons_images/voiceChessLogo.png",
+      "page": "project.html?id=voice-chess",
+      "details": [
+        "Chess game that can be played by voice commands.",
+        "Developed as an engineering project for the University of Lodz.",
+        "Uses the Vosk ASR model, the Stockfish engine, and a microservices architecture."
+      ],
+      "links": [      ],
+      "gallery": [
+        "subsites/voiceChess/vc1.png",
+        "subsites/voiceChess/vc2.png",
+        "subsites/voiceChess/vc3.png",
+        "subsites/voiceChess/vc4.png"
+      ],
+      "tech": ["Vosk", "Stockfish", "Python"]
+    },
+    {
+      "id": "kociolek-panoramiksa",
+      "title": "Kociołek Panoramiksa",
+      "meta": "Game Jam · 4-person team",
+      "description": "A game about 'Masks', created during the Global Game Jam 2026.",
+      "cardImage": "icons_images/kociolekLogo.png",
+      "heroImage": "icons_images/kociolekLogo.png",
+      "page": "project.html?id=kociolek-panoramiksa",
+      "details": [
+        "Game created during Global Game Jam 2026.",
+        "Created in Unity Engine during a 48-hour jam.",
+        "Developed in cooperation with a 4-person team."
+      ],
+      "links": [
+        {
+          "label": "GitHub repository",
+          "url": "https://github.com/Gradi02/GGJ2026"
+        },
+        {
+          "label": "Itch.io web build",
+          "url": "https://gradiano.itch.io/kociolek-panoramiksa"
+        }
+      ],
+      "gallery": [
+        "subsites/kociolek/kociolek1.png",
+        "subsites/kociolek/kociolek2.png"
+      ],
+      "tech": ["Unity", "C#", "Game Jam"]
+    },
+    {
+      "id": "the-ophiuchus",
+      "title": "The Ophiuchus",
+      "meta": "48h jam · 5-person team",
+      "description": "A game about the Ophiuchus, created during the Komiks Game Jam 2025.",
+      "cardImage": "icons_images/opiLogo.png",
+      "heroImage": "icons_images/opiLogo.png",
+      "page": "project.html?id=the-ophiuchus",
+      "details": [
+        "Game created during the Komiks Game Jam 2025.",
+        "Created in Unity Engine during a 48-hour jam.",
+        "Developed in cooperation with a 5-person team."
+      ],
+      "links": [
+        {
+          "label": "GitHub repository",
+          "url": "https://github.com/Gradi02/KomiksGameJam2k25"
+        },
+        {
+          "label": "Itch.io web build",
+          "url": "https://tobkubos.itch.io/the-ophiuchus"
+        }
+      ],
+      "gallery": [
+        "subsites/Ophiuchus/opi1.png",
+        "subsites/Ophiuchus/opi2.png",
+        "subsites/Ophiuchus/opi3.png"
+      ],
+      "tech": ["Unity", "C#", "Game Jam"]
     },
     {
       "id": "smoke-n-sail",
       "title": "Smoke'n'Sail",
-      "category": "Unity · Game Jam",
-      "tagline": "Meet-IT Game Jam 2024 winning game.",
       "meta": "24h jam · 5-person team",
       "description": "A stylised pirate game built in 24 hours for the Meet-IT Game Jam 2024, awarded first place.",
-      "cardImage": "images/piraciLogo.png",
-      "heroImage": "images/piraciLogo.png",
+      "cardImage": "icons_images/piraciLogo.png",
+      "heroImage": "icons_images/piraciLogo.png",
       "page": "project.html?id=smoke-n-sail",
       "details": [
         "Game-Jam first place winner at Meet-IT Game Jam 2024.",
@@ -45,22 +136,20 @@
         }
       ],
       "gallery": [
-        "subsites/Images/p1/piraci1.png",
-        "subsites/Images/p1/piraci2.png",
-        "subsites/Images/p1/piraci3.png",
-        "subsites/Images/p1/piraci4.png"
+        "subsites/smoke_n_sails/piraci1.png",
+        "subsites/smoke_n_sails/piraci2.png",
+        "subsites/smoke_n_sails/piraci3.png",
+        "subsites/smoke_n_sails/piraci4.png"
       ],
       "tech": ["Unity", "C#", "Game Jam"]
     },
     {
       "id": "ongrid",
       "title": "OnGrid",
-      "category": "Figma · UX",
-      "tagline": "Eco-city mobile app concept from StartIT Antwerp.",
       "meta": "Figma prototype · 10 days",
       "description": "Mobile app UX concept for an eco-city challenge, designed and prototyped during the StartIT international project in Antwerp.",
-      "cardImage": "images/OnGridLogo.png",
-      "heroImage": "images/OnGridLogo.png",
+      "cardImage": "icons_images/OnGridLogo.png",
+      "heroImage": "icons_images/OnGridLogo.png",
       "page": "project.html?id=ongrid",
       "details": [
         "StartIT international project held in Antwerp in 2024.",
@@ -74,51 +163,20 @@
         }
       ],
       "gallery": [
-        "subsites/Images/p2/figma1.png",
-        "subsites/Images/p2/figma2.png",
-        "subsites/Images/p2/figma3.png",
-        "subsites/Images/p2/figma4.png"
+        "subsites/onGrid/figma1.png",
+        "subsites/onGrid/figma2.png",
+        "subsites/onGrid/figma3.png",
+        "subsites/onGrid/figma4.png"
       ],
       "tech": ["Figma", "UX", "UI"]
     },
     {
-      "id": "directx-engine",
-      "title": "DirectX Engine",
-      "category": "C++ · DirectX",
-      "tagline": "Custom graphics engine with basic input and shaders.",
-      "meta": "Low-level rendering",
-      "description": "A simple graphics engine written in modern C++ using DirectX, featuring basic rendering, input handling and shader support.",
-      "cardImage": "images/EngineLogo.png",
-      "heroImage": "images/EngineLogo.png",
-      "page": "project.html?id=directx-engine",
-      "details": [
-        "Graphic engine created with C++ and DirectX.",
-        "Includes basic input management and shaders.",
-        "Capable of rendering triangles and simple shapes."
-      ],
-      "links": [
-        {
-          "label": "GitHub repository",
-          "url": "https://github.com/Gradi02/DirectX-Engine"
-        }
-      ],
-      "gallery": [
-        "subsites/Images/p3/engine1.png",
-        "subsites/Images/p3/engine2.png",
-        "subsites/Images/p3/engine3.png",
-        "subsites/Images/p3/engine4.png"
-      ],
-      "tech": ["C++", "DirectX"]
-    },
-    {
       "id": "chezle",
       "title": "Chezle",
-      "category": "Unity · Mobile",
-      "tagline": "Puzzle mobile game with rewarded ads.",
       "meta": "Android · Unity Ads",
       "description": "Mobile puzzle game built with Unity and Android SDK, featuring integrated rewarded ads and multiple handcrafted levels.",
-      "cardImage": "images/chezleLogo.png",
-      "heroImage": "images/chezleLogo.png",
+      "cardImage": "icons_images/chezleLogo.png",
+      "heroImage": "icons_images/chezleLogo.png",
       "page": "project.html?id=chezle",
       "details": [
         "Mobile game created with Unity Engine and Android SDK.",
@@ -133,22 +191,19 @@
         }
       ],
       "gallery": [
-        "subsites/Images/p4/chezle2.png",
-        "subsites/Images/p4/chezle1.png",
-        "subsites/Images/p4/chezle3.png",
-        "subsites/Images/p4/chezle4.png"
+        "subsites/chezle/chezle1.png",
+        "subsites/chezle/chezle2.png",
+        "subsites/chezle/chezle3.png"
       ],
-      "tech": ["Unity", "C#", "Android", "Ads API"]
+      "tech": ["Unity", "C#", "Android"]
     },
     {
       "id": "java-swing-paint",
       "title": "Java Swing Paint",
-      "category": "Java · Desktop",
-      "tagline": "Desktop paint clone built in Java Swing.",
       "meta": "Custom drawing tools",
       "description": "A Windows-style paint clone implemented with Java Swing, supporting free drawing, shapes, text tools and custom palettes.",
-      "cardImage": "images/paintLogo.png",
-      "heroImage": "images/paintLogo.png",
+      "cardImage": "icons_images/paintLogo.png",
+      "heroImage": "icons_images/paintLogo.png",
       "page": "project.html?id=java-swing-paint",
       "details": [
         "Paint-like desktop application created in Java Swing.",
@@ -157,22 +212,19 @@
       ],
       "links": [],
       "gallery": [
-        "subsites/Images/p5/paint1.png",
-        "subsites/Images/p5/paint2.png",
-        "subsites/Images/p5/paint3.png",
-        "subsites/Images/p5/paint4.png"
+        "subsites/paint/paint1.png",
+        "subsites/paint/paint2.png",
+        "subsites/paint/paint3.png"
       ],
       "tech": ["Java", "Swing"]
     },
     {
       "id": "web-checkers",
       "title": "Web Checkers",
-      "category": "three.js · Web",
-      "tagline": "Interactive 3D checkers board in a room scene.",
       "meta": "WebGL · Raycasting",
       "description": "A three.js powered 3D room scene with an interactive checkers board and piece movement driven by raycasting.",
-      "cardImage": "images/checkersLogo.png",
-      "heroImage": "images/checkersLogo.png",
+      "cardImage": "icons_images/checkersLogo.png",
+      "heroImage": "icons_images/checkersLogo.png",
       "page": "project.html?id=web-checkers",
       "details": [
         "Room scene with an interactive checkers board built in three.js.",
@@ -180,47 +232,64 @@
       ],
       "links": [],
       "gallery": [
-        "subsites/Images/p6/js1.png",
-        "subsites/Images/p6/js2.png",
-        "subsites/Images/p6/js3.png",
-        "subsites/Images/p6/js4.png"
+        "subsites/checkers/js1.png",
+        "subsites/checkers/js2.png",
+        "subsites/checkers/js3.png"
       ],
       "tech": ["JavaScript", "three.js"]
     },
     {
       "id": "brozard",
       "title": "Brozard",
-      "category": "Unity · 2D",
-      "tagline": "Co-op top-down shooter built with a friend.",
       "meta": "2D shooter",
       "description": "A 2D top-down shooter built in Unity in collaboration with a friend, focusing on tight controls and co-op gameplay.",
-      "cardImage": "images/brozardLogo.png",
-      "heroImage": "images/brozardLogo.png",
+      "cardImage": "icons_images/brozardLogo.png",
+      "heroImage": "icons_images/brozardLogo.png",
       "page": "project.html?id=brozard",
       "details": [
         "2D top-down shooter created in Unity Engine.",
         "Developed together with a friend."
       ],
-      "links": [],
-      "gallery": [],
+      "links": [
+        {
+          "label": "GitHub repository",
+          "url": "https://github.com/Gradi02/Brozard"
+        },
+        {
+          "label": "Itch.io web build",
+          "url": "https://tobkubos.itch.io/brozard"
+        }
+      ],
+      "gallery": [
+        "subsites/brozard/brozard1.png",
+        "subsites/brozard/brozard2.png",
+        "subsites/brozard/brozard3.png",
+        "subsites/brozard/brozard4.png"
+      ],
       "tech": ["Unity", "C#", "2D"]
     },
     {
       "id": "qt-calculator",
       "title": "QT Calculator",
-      "category": "C++ · Qt",
-      "tagline": "Desktop calculator with string-based expression evaluation.",
       "meta": "Qt widgets",
       "description": "Calculator application built with C++ and Qt, featuring string evaluation for flexible mathematical input.",
-      "cardImage": "images/calculator.png",
-      "heroImage": "images/calculator.png",
+      "cardImage": "icons_images/calculator.png",
+      "heroImage": "icons_images/calculator.png",
       "page": "project.html?id=qt-calculator",
       "details": [
         "Calculator created in Qt with C++.",
         "Supports string-based expression evaluation."
       ],
-      "links": [],
-      "gallery": [],
+      "links": [
+        {
+          "label": "GitHub repository",
+          "url": "https://github.com/Gradi02/QTcalculator"
+        }
+      ],
+      "gallery": [
+        "subsites/calculator/calculator.png",
+        "subsites/calculator/calculator2.png"
+      ],
       "tech": ["C++", "Qt"]
     }
   ]
