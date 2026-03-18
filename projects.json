@@ -4,7 +4,7 @@
       "id": "wuzzek",
       "title": "Push The Cart Together",
       "meta": "Multiplayer · Steam API",
-      "description": "A multiplayer game about pushing a cart. Will be released on Steam in 2026.",
+      "description": "A multiplayer game about pushing a cart, planned for release on Steam in 2026.",
       "cardImage": "icons_images/wuzzekLogo.png",
       "heroImage": "icons_images/wuzzekLogo.png",
       "page": "project.html?id=wuzzek",
@@ -42,7 +42,7 @@
       "details": [
         "Chess game that can be played by voice commands.",
         "Developed as an engineering project for the University of Lodz.",
-        "Uses Vosk ASR model, stockfish engine, microservices architecture."
+        "Uses the Vosk ASR model, the Stockfish engine, and a microservices architecture."
       ],
       "links": [      ],
       "gallery": [
@@ -57,7 +57,7 @@
       "id": "kociolek-panoramiksa",
       "title": "Kociołek Panoramiksa",
       "meta": "Game Jam · 4-person team",
-      "description": "A game about the 'Masks', created during the Global Game Jam 2026.",
+      "description": "A game about 'Masks', created during the Global Game Jam 2026.",
       "cardImage": "icons_images/kociolekLogo.png",
       "heroImage": "icons_images/kociolekLogo.png",
       "page": "project.html?id=kociolek-panoramiksa",
@@ -91,7 +91,7 @@
       "heroImage": "icons_images/opiLogo.png",
       "page": "project.html?id=the-ophiuchus",
       "details": [
-        "Game-Jam created during Komiks Game Jam 2025.",
+        "Game created during the Komiks Game Jam 2025.",
         "Created in Unity Engine during a 48-hour jam.",
         "Developed in cooperation with a 5-person team."
       ],
