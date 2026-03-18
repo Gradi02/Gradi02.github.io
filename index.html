@@ -61,28 +61,6 @@
         }
       }
 
-      .badge-pill {
-        display: inline-flex;
-        align-items: center;
-        gap: 0.45rem;
-        padding: 0.35rem 0.85rem;
-        border-radius: 999px;
-        background: rgba(15, 23, 42, 0.9);
-        border: 1px solid rgba(148, 163, 184, 0.35);
-        color: var(--text-muted);
-        font-size: 0.76rem;
-        letter-spacing: 0.16em;
-        text-transform: uppercase;
-      }
-
-      .badge-dot {
-        width: 8px;
-        height: 8px;
-        border-radius: 999px;
-        background: radial-gradient(circle at 30% 30%, #f9fafb, #22c55e 55%, #16a34a 100%);
-        box-shadow: 0 0 0 1px rgba(34, 197, 94, 0.4);
-      }
-
       .hero-layout {
         display: grid;
         gap: 2rem;
@@ -204,55 +182,29 @@
         position: relative;
       }
 
-      .hero-panel {
-        border-radius: 1.5rem;
-        padding: 1.5rem;
-        background: radial-gradient(circle at 10% 0, rgba(56, 189, 248, 0.12), rgba(15, 23, 42, 0.96));
-        border: 1px solid rgba(148, 163, 184, 0.4);
+      .snapshot {
+        border-radius: 1.25rem;
+        padding: 1.25rem 1.25rem 1.15rem;
+        background: rgba(15, 23, 42, 0.6);
+        border: 1px solid rgba(148, 163, 184, 0.28);
         box-shadow:
-          0 16px 40px rgba(15, 23, 42, 0.98),
+          0 16px 40px rgba(15, 23, 42, 0.9),
           0 0 0 1px rgba(15, 23, 42, 0.9);
-        overflow: hidden;
       }
 
-      .hero-panel-header {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        margin-bottom: 1.25rem;
-        font-size: 0.83rem;
+      .snapshot-title {
+        font-size: 0.82rem;
+        text-transform: uppercase;
+        letter-spacing: 0.18em;
         color: var(--text-muted);
+        margin: 0 0 0.75rem;
       }
 
-      .hero-panel-grid {
-        display: grid;
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 0.75rem;
-      }
-
-      .stat-card {
-        border-radius: 0.9rem;
-        padding: 0.75rem 0.85rem;
-        background: rgba(15, 23, 42, 0.9);
-        border: 1px solid rgba(31, 41, 55, 0.95);
-      }
-
-      .stat-label {
-        font-size: 0.78rem;
+      .snapshot-list {
+        margin: 0;
+        padding-left: 1.05rem;
         color: var(--text-muted);
-        margin-bottom: 0.25rem;
-      }
-
-      .stat-value {
         font-size: 0.92rem;
-        font-weight: 600;
-        color: #e5e7eb;
-      }
-
-      .stat-tag {
-        margin-top: 0.2rem;
-        font-size: 0.75rem;
-        color: #9ca3af;
       }
 
       .projects-header {
@@ -278,8 +230,25 @@
 
       .projects-grid {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
         gap: 1.4rem;
+      }
+
+      @media (max-width: 575.98px) {
+        .projects-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      @media (min-width: 576px) and (max-width: 991.98px) {
+        .projects-grid {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+      }
+
+      @media (min-width: 992px) {
+        .projects-grid {
+          grid-template-columns: repeat(3, minmax(0, 1fr));
+        }
       }
 
       .project-card {
@@ -450,28 +419,14 @@
         <div class="page-card fade-in">
           <div class="hero-layout">
             <div>
-              <div class="badge-pill mb-3">
-                <span class="badge-dot"></span>
-                <span>Game / Graphics / Web</span>
-              </div>
               <h1 class="hero-title">
                 Adrian Nowowiejski
                 <span class="hero-highlight">— Portfolio</span>
               </h1>
               <p class="hero-subtitle">
-                I design and build interactive experiences: from Unity games and custom DirectX engines to web experiments and tools.
-                Below is a curated selection of work that best reflects my skills and interests.
+                I design and build digital products and interactive experiences — from real-time graphics and tooling to web applications.
+                Below is a curated selection of work that reflects my range and interests.
               </p>
-              <div class="hero-meta">
-                <div>
-                  <span class="hero-meta-label">Focus</span>
-                  Gameplay programming, graphics, UI, tools
-                </div>
-                <div>
-                  <span class="hero-meta-label">Stack</span>
-                  Unity · C++ · C# · Java · Web
-                </div>
-              </div>
               <div class="hero-actions">
                 <a href="mailto:anowowiejski123@gmail.com" class="btn-primary-soft text-decoration-none">
                   <span>Get in touch</span>
@@ -483,37 +438,15 @@
                 </a>
               </div>
             </div>
+
             <aside class="hero-aside">
-              <div class="hero-panel fade-in fade-in-delay">
-                <div class="hero-panel-header">
-                  <span>Snapshot</span>
-                  <span class="pill">
-                    <span class="pill-dot"></span>
-                    <span>Always learning</span>
-                  </span>
-                </div>
-                <div class="hero-panel-grid">
-                  <div class="stat-card">
-                    <div class="stat-label">Shipped projects</div>
-                    <div class="stat-value" id="stat-project-count">9+</div>
-                    <div class="stat-tag">Games · tools · prototypes</div>
-                  </div>
-                  <div class="stat-card">
-                    <div class="stat-label">Game jams & events</div>
-                    <div class="stat-value">Meet-IT · StartIT</div>
-                    <div class="stat-tag">Collaboration & deadlines</div>
-                  </div>
-                  <div class="stat-card">
-                    <div class="stat-label">Engines & graphics</div>
-                    <div class="stat-value">DirectX · three.js</div>
-                    <div class="stat-tag">Low-level rendering</div>
-                  </div>
-                  <div class="stat-card">
-                    <div class="stat-label">Platforms</div>
-                    <div class="stat-value">PC · Web · Mobile</div>
-                    <div class="stat-tag">Unity · Java · Qt</div>
-                  </div>
-                </div>
+              <div class="snapshot">
+                <p class="snapshot-title">Snapshot</p>
+                <ul class="snapshot-list">
+                  <li>Software engineering across web, tooling, and interactive work.</li>
+                  <li>Enjoys performance, clean UI, and strong fundamentals.</li>
+                  <li>Open to varied roles and project types.</li>
+                </ul>
               </div>
             </aside>
           </div>
@@ -527,12 +460,6 @@
 
           <div id="projects-grid" class="projects-grid" aria-live="polite"></div>
         </div>
-
-
-
-
-
-
 
         <div class="mt-4">
           <footer class="d-flex flex-wrap justify-content-between align-items-center pt-3 mt-2 border-top border-secondary-subtle">
@@ -564,7 +491,6 @@
 
     <script>
       const projectsGrid = document.getElementById('projects-grid');
-      const projectCountStat = document.getElementById('stat-project-count');
 
       function createProjectCard(project) {
         const card = document.createElement('article');
@@ -579,16 +505,14 @@
         img.alt = project.title;
         thumbWrap.appendChild(img);
 
-        const tag = document.createElement('div');
-        tag.className = 'project-tag';
-        const tagLeft = document.createElement('div');
-        tagLeft.textContent = project.tagline || 'Featured project';
-        const tagRight = document.createElement('div');
-        tagRight.className = 'project-tag-pill';
-        tagRight.textContent = project.category || 'Project';
-        tag.appendChild(tagLeft);
-        tag.appendChild(tagRight);
-        thumbWrap.appendChild(tag);
+        if (project.meta || project.description) {
+          const tag = document.createElement('div');
+          tag.className = 'project-tag';
+          const tagLeft = document.createElement('div');
+          tagLeft.textContent = project.meta || project.description;
+          tag.appendChild(tagLeft);
+          thumbWrap.appendChild(tag);
+        }
 
         const body = document.createElement('div');
         body.className = 'project-body';
@@ -654,10 +578,6 @@
           projects.forEach(p => {
             projectsGrid.appendChild(createProjectCard(p));
           });
-
-          if (projects.length && projectCountStat) {
-            projectCountStat.textContent = projects.length + '+';
-          }
         })
         .catch(() => {
           projectsGrid.innerHTML = '<p class="text-body-secondary small mb-0">Unable to load projects.json – please ensure the file exists in the root of the repository.</p>';
