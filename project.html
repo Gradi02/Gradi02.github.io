@@ -559,6 +559,9 @@
 
       (function () {
         const id = getProjectIdFromQuery();
+        // #region agent log
+        fetch('http://127.0.0.1:7244/ingest/e8b2c4f8-4f41-4bd5-85a4-8922977ee198',{method:'POST',headers:{'Content-Type':'application/json','X-Debug-Session-Id':'e16bdc'},body:JSON.stringify({sessionId:'e16bdc',runId:'pre-fix',hypothesisId:'H1',location:'project.html:493',message:'Loaded project page with query id',data:{id,href:window.location.href},timestamp:Date.now()})}).catch(()=>{});
+        // #endregion
         if (!id) {
           renderNotFound();
           return;
@@ -569,6 +572,9 @@
           .then((data) => {
             const projects = (data && data.projects) || [];
             const project = projects.find((p) => p.id === id);
+            // #region agent log
+            fetch('http://127.0.0.1:7244/ingest/e8b2c4f8-4f41-4bd5-85a4-8922977ee198',{method:'POST',headers:{'Content-Type':'application/json','X-Debug-Session-Id':'e16bdc'},body:JSON.stringify({sessionId:'e16bdc',runId:'pre-fix',hypothesisId:'H1',location:'project.html:508',message:'Lookup project by id',data:{id,projectsCount:projects.length,found:!!project,firstIds:projects.slice(0,8).map(p=>p && p.id)},timestamp:Date.now()})}).catch(()=>{});
+            // #endregion
             if (!project) {
               renderNotFound();
               return;
