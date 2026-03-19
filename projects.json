@@ -83,6 +83,37 @@
       "tech": ["Unity", "C#", "Game Jam"]
     },
     {
+      "id": "Jump-King",
+      "title": "Jump Cat King",
+      "meta": "PWA · JavaScript",
+      "description": "PWA mobile game about a cat that jumps on platforms.",
+      "cardImage": "icons_images/jumpCatLogo.png",
+      "heroImage": "icons_images/jumpCatLogo.png",
+      "page": "project.html?id=jump-king",
+      "details": [
+        "Mobile platform game created in a JavaScript.",
+        "Uses Firebase for authentication and Leaderboard system.",
+        "Physics, collisions and animations are implemented by my own code."
+      ],
+      "links": [
+        {
+          "label": "GitHub repository",
+          "url": "https://github.com/Gradi02/PGNUM-JumpKing"
+        },
+        {
+          "label": "Github Pages web build",
+          "url": "https://gradi02.github.io/PGNUM-JumpKing/"
+        }
+      ],
+      "gallery": [
+        "subsites/jumpCat/jumpCat1.png",
+        "subsites/jumpCat/jumpCat2.png",
+        "subsites/jumpCat/jumpCat3.png",
+        "subsites/jumpCat/jumpCat5.png"
+      ],
+      "tech": ["PWA", "JavaScript", "Firebase"]
+    },
+    {
       "id": "the-ophiuchus",
       "title": "The Ophiuchus",
       "meta": "48h jam · 5-person team",
