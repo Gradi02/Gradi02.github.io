@@ -106,10 +106,10 @@
         }
       ],
       "gallery": [
-        "subsites/jumpCat/jumpCat1.png",
-        "subsites/jumpCat/jumpCat2.png",
-        "subsites/jumpCat/jumpCat3.png",
-        "subsites/jumpCat/jumpCat5.png"
+        "subsites/jumpking/jumpCat1.png",
+        "subsites/jumpking/jumpCat2.png",
+        "subsites/jumpking/jumpCat3.png",
+        "subsites/jumpking/jumpCat5.png"
       ],
       "tech": ["PWA", "JavaScript", "Firebase"]
     },
