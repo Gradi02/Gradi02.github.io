@@ -83,7 +83,7 @@
       "tech": ["Unity", "C#", "Game Jam"]
     },
     {
-      "id": "Jump-King",
+      "id": "jump-king",
       "title": "Jump Cat King",
       "meta": "PWA · JavaScript",
       "description": "PWA mobile game about a cat that jumps on platforms.",

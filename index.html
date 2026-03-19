@@ -542,6 +542,11 @@
         const link = document.createElement('a');
         link.className = 'project-link';
         link.href = project.page || '';
+        // #region agent log
+        if (project && (project.id === 'Jump-King' || project.id === 'jump-king' || project.title === 'Jump Cat King')) {
+          fetch('http://127.0.0.1:7244/ingest/e8b2c4f8-4f41-4bd5-85a4-8922977ee198',{method:'POST',headers:{'Content-Type':'application/json','X-Debug-Session-Id':'e16bdc'},body:JSON.stringify({sessionId:'e16bdc',runId:'pre-fix',hypothesisId:'H2',location:'index.html:558',message:'Card link computed for Jump project',data:{projectId:project.id,title:project.title,page:project.page,href:link.href},timestamp:Date.now()})}).catch(()=>{});
+        }
+        // #endregion
         const span = document.createElement('span');
         span.textContent = 'View details';
         const icon = document.createElement('i');
